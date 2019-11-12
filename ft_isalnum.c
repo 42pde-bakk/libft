@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:00:04 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/04 14:00:21 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2019/11/12 22:31:49 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 int	ft_isalnum(int c)
 {
 	if ((ft_isalpha(c) == 1) || (ft_isdigit(c) == 1))
-		return (1);
-	if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z')
-	|| (c >= 'a' && c <= 'z'))
 		return (1);
 	return (0);
 }

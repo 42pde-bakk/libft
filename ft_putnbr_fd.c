@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 17:52:47 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/04 17:59:33 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2019/11/12 22:41:05 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_putnbr_fd(int n, int fd)
 	else if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(abs(n), fd);
+		ft_putnbr_fd(-n, fd);
 	}
 	else if (n >= 10)
 	{

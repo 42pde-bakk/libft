@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 10:53:26 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/12 14:26:44 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2019/11/12 15:59:01 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	if (size <= dstsize - d)
 		ft_memcpy(dst + d, src, size + 1);
 	else
-	{
 		ft_memcpy(dst + d, src, dstsize - 1);
-		dst[dstsize - 1] = '\0';
-	}
+	dst[dstsize - 1] = '\0';
 	return (size + d);
 }

@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 15:11:23 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/12 15:36:22 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2019/11/05 16:10:02 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,30 +27,29 @@ static int	amount(int n)
 	return (i);
 }
 
-static char	*edgecasecheck(int n)
+static int	edgecasecheck(int n, char *str)
 {
-	char	*str;
-	int		i;
+	int		ii;
+	char	*fstr;
 
-	i = 11;
 	if (n == -2147483648)
 	{
-		str = (char*)malloc(sizeof(char) * 11 + 1);
-		if (str == NULL)
-			return (NULL);
-		str = "-2147483648";
-		str[11] = '\0';
-		return (str);
+		ii = 0;
+		fstr = "-2147483648";
+		while (ii <= 12)
+		{
+			str[ii] = fstr[ii];
+			ii++;
+		}
+		return (1);
 	}
 	else if (n == 0)
 	{
-		str = (char*)malloc(sizeof(char) * 1 + 1);
 		str[0] = '0';
 		str[1] = '\0';
-		return (str);
+		return (1);
 	}
-	else
-		return (NULL);
+	return (0);
 }
 
 char		*ft_itoa(int n)
@@ -59,15 +58,15 @@ char		*ft_itoa(int n)
 	int		i;
 	int		nb;
 
-	if (n == -2147483648 || n == 0)
-		return (edgecasecheck(n));
 	i = amount(n);
 	nb = n;
 	if (n < 0)
 		nb = -n;
-	ret = (char*)malloc(sizeof(char) * (i + 1));
+	ret = (char*)malloc(i + 1);
 	if (ret == NULL)
 		return (NULL);
+	if (edgecasecheck(n, ret) == 1)
+		return (ret);
 	ret[i] = '\0';
 	i--;
 	while (i >= 0)

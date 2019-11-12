@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstmap.c                                        :+:    :+:            */
+/*   ft_lstmap_bonus.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/07 15:24:16 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/12 12:50:15 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/07 15:24:16 by pde-bakk       #+#    #+#                */
+/*   Updated: 2019/11/12 16:13:05 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	{
 		tmp = ft_lstnew(f(lst->content));
 		if (tmp == NULL)
+		{
 			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
 		ft_lstadd_back(&new_list, tmp);
 		lst = lst->next;
 	}

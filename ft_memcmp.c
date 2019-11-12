@@ -5,13 +5,12 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/30 11:52:41 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/11 17:08:05 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/10/30 11:52:41 by pde-bakk       #+#    #+#                */
+/*   Updated: 2019/11/12 17:16:41 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
