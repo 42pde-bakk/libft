@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 13:02:25 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/04 11:26:30 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2019/11/11 12:53:44 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	str = (char*)b;
 	while (i < len)
 	{
-		str[i] = c;
+		str[i] = (char)c;
 		i++;
 	}
 	return (b);

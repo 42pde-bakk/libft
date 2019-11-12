@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 14:46:14 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/04 11:26:41 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2019/11/11 15:49:09 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t i;
-
-	i = 0;
-	while (n > i)
-	{
-		((char *)s)[i] = 0;
-		i++;
-	}
+	if (n != 0)
+		ft_memset(s, 0, n);
 }

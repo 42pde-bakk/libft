@@ -5,14 +5,14 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/28 14:51:25 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/06 13:54:37 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/10/28 14:51:25 by pde-bakk       #+#    #+#                */
+/*   Updated: 2019/11/11 15:19:06 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int				n;
 	int				sign;

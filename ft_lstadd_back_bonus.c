@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/06 12:30:13 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/07 17:34:59 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2019/11/12 12:50:04 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 {
 	t_list *list;
 
+	if (alst == NULL)
+		return ;
 	list = *alst;
-	if (list && new)
+	if (*alst == NULL)
+		*alst = new;
+	else
 	{
+		list = *alst;
 		while (list->next)
 			list = list->next;
 		list->next = new;
 	}
-	if (((*alst) == NULL) && (new != NULL))
-		(*alst) = new;
 }

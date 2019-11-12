@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 10:44:29 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/04 11:31:13 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/10/29 10:44:29 by pde-bakk       #+#    #+#                */
+/*   Updated: 2019/11/12 15:08:02 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,23 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	count;
 	size_t	i;
+	size_t	d;
 
 	count = 0;
+	d = 0;
 	i = 0;
 	if (dst == NULL || src == NULL)
 		return (0);
 	while (src[count] != '\0')
 		count++;
-	while ((src[i]) && (i < (dstsize - 1)))
+	while (dst[d] != '\0')
+		d++;
+	if (count + 1 < dstsize)
+		ft_memcpy(dst, src, count + 1);
+	else if (dstsize != 0)
 	{
-		dst[i] = src[i];
-		i++;
+		ft_memcpy(dst, src, dstsize - 1);
+		dst[dstsize - 1] = '\0';
 	}
-	dst[i] = '\0';
 	return (count);
 }

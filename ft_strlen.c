@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 10:25:12 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/04 11:29:08 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2019/11/11 15:09:44 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != '\0')

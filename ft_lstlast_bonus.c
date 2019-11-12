@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   ft_lstlast.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 16:39:06 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/11 19:55:08 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/06 11:38:37 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2019/11/10 12:47:33 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char	*sh;
-	char	*sn;
-	size_t	i;
-	size_t	n;
+	int	len;
 
-	sh = (char*)haystack;
-	sn = (char*)needle;
-	i = 0;
-	n = 0;
-	if (sn[0] == '\0')
-		return (sh);
-	while (sh[i] && sn[n] && i < len && len != 0)
+	if (lst == NULL)
+		return (NULL);
+	len = ft_lstsize(lst);
+	while (len - 1 > 0)
 	{
-		while (sh[i] && sh[i] == sn[n] && (i < len))
-		{
-			i++;
-			n++;
-			if (sn[n] == '\0')
-				return (sh + i - n);
-		}
-		i++;
-		n = 0;
+		lst = lst->next;
+		len--;
 	}
-	return (0);
+	return (lst);
 }
