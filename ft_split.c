@@ -6,11 +6,12 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/03 15:55:21 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/12 17:13:30 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2019/11/14 15:47:05 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int		ft_countwords(const char *s, char c)
 {
@@ -45,18 +46,21 @@ static int		ft_wordlength(const char *s, char c)
 	return (i);
 }
 
-static void		ft_free_array(char **arr)
+static void		*ft_free_array(char **arr)
 {
-	while (*arr)
+	unsigned int i;
+
+	i = 0;
+	while (arr[i])
 	{
-		ft_bzero(*arr, ft_strlen(*arr));
-		free(*arr);
-		arr++;
+		free(arr[i]);
+		i++;
 	}
 	free(arr);
+	return (NULL);
 }
 
-static char		*ft_mallocword(const char *s, char c, char **arr)
+static char		*ft_mallocword(const char *s, char c)
 {
 	int		i;
 	char	*word;
@@ -70,10 +74,7 @@ static char		*ft_mallocword(const char *s, char c, char **arr)
 	i = 0;
 	word = (char *)malloc(sizeof(char) * (length + 1));
 	if (word == NULL)
-	{
-		ft_free_array(arr);
 		return (NULL);
-	}
 	while ((s[i]) && length > 0)
 	{
 		word[i] = s[i];
@@ -94,20 +95,21 @@ char			**ft_split(char const *s, char c)
 		return (0);
 	i = 0;
 	n = 0;
-	arr = (char **)malloc(sizeof(char*) * (ft_countwords(s, c) + 1));
+	arr = (char **)calloc(sizeof(char*), (ft_countwords(s, c) + 1));
 	if (arr == NULL || s == 0)
 		return (NULL);
 	while (s[i] && ft_countwords(s, c) > n)
 	{
 		if ((s[i] != c) && (ft_countwords(s, c) > n))
 		{
-			arr[n] = ft_mallocword(s + i, c, arr);
+			arr[n] = ft_mallocword(s + i, c);
+			if (arr[n] == NULL)
+				return (ft_free_array(arr));
 			i = i + ft_wordlength(s + i, c);
 			n++;
 		}
 		while (s[i] == c)
 			i++;
 	}
-	arr[n] = NULL;
 	return (arr);
 }

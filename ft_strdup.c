@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/30 15:10:18 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/04 11:32:30 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/10/30 15:10:18 by pde-bakk       #+#    #+#                */
+/*   Updated: 2019/11/14 12:18:34 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,26 @@
 
 char	*ft_strdup(const char *s1)
 {
-	void	*new;
-	size_t	n;
+	char	*copy;
+	int		len;
+	int		i;
 
-	n = ft_strlen(s1) + 1;
-	new = malloc(n);
-	if (new == NULL)
+	len = 0;
+	i = 0;
+	while (s1[len])
+		len++;
+	copy = (char*)malloc(len + 1);
+	if (!copy)
 		return (NULL);
-	return ((char*)ft_memcpy(new, s1, n));
+	else
+	{
+		while (s1[i])
+		{
+			copy[i] = s1[i];
+			i++;
+		}
+		copy[i] = '\0';
+		return (copy);
+	}
+	return (0);
 }

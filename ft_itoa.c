@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 15:11:23 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/05 16:10:02 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2019/11/14 09:34:38 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,12 @@ static int	edgecasecheck(int n, char *str)
 	{
 		ii = 0;
 		fstr = "-2147483648";
-		while (ii <= 12)
+		while (ii < 11)
 		{
 			str[ii] = fstr[ii];
 			ii++;
 		}
+		str[11] = '\0';
 		return (1);
 	}
 	else if (n == 0)

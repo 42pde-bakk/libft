@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 17:43:39 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/08 17:29:35 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2019/11/14 12:32:16 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t		i;
 	char		*d;
-	char		*s;
+	const char	*s;
 
 	i = 0;
 	d = (char *)dst;
-	s = (char *)src;
+	s = (const char *)src;
 	if (dst == src)
 		return (dst);
 	while (i < n)

@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/28 13:02:25 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/11 12:53:44 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/14 11:18:40 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2019/11/14 11:20:14 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
-	char	*str;
 
 	i = 0;
-	str = (char*)b;
 	while (i < len)
 	{
-		str[i] = (char)c;
+		((unsigned char*)b)[i] = (unsigned char)c;
 		i++;
 	}
 	return (b);
