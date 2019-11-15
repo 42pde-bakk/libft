@@ -6,12 +6,11 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/03 15:55:21 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/14 15:47:05 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2019/11/15 15:42:17 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int		ft_countwords(const char *s, char c)
 {
@@ -95,7 +94,7 @@ char			**ft_split(char const *s, char c)
 		return (0);
 	i = 0;
 	n = 0;
-	arr = (char **)calloc(sizeof(char*), (ft_countwords(s, c) + 1));
+	arr = (char **)ft_calloc(sizeof(char*), (ft_countwords(s, c) + 1));
 	if (arr == NULL || s == 0)
 		return (NULL);
 	while (s[i] && ft_countwords(s, c) > n)

@@ -5,32 +5,41 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 10:53:26 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/12 15:59:01 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/14 18:32:33 by pde-bakk       #+#    #+#                */
+/*   Updated: 2019/11/15 11:21:39 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+static	size_t	ft_strnlen(char *str, size_t max)
 {
-	size_t	d;
-	size_t	i;
-	size_t	size;
+	size_t i;
 
-	d = 0;
-	size = 0;
 	i = 0;
-	while (dst[d] && d < dstsize)
-		d++;
-	while (src[size] != '\0')
-		size++;
-	if (d == dstsize || dstsize == 0)
-		return (size + dstsize);
-	if (size <= dstsize - d)
-		ft_memcpy(dst + d, src, size + 1);
+	while (str[i])
+		i++;
+	if (i <= max)
+		return (i);
 	else
-		ft_memcpy(dst + d, src, dstsize - 1);
-	dst[dstsize - 1] = '\0';
-	return (size + d);
+		return (max);
+}
+
+size_t			ft_strlcat(char *dst, const char *src, size_t dsize)
+{
+	size_t	srclen;
+	size_t	destlen;
+
+	srclen = ft_strlen((const char *)src);
+	destlen = ft_strnlen(dst, dsize);
+	if (destlen == dsize)
+		return (dsize + srclen);
+	if (srclen < dsize - destlen)
+		ft_memcpy(dst + destlen, src, srclen + 1);
+	else
+	{
+		ft_memcpy(dst + destlen, src, dsize - destlen - 1);
+		dst[dsize - 1] = '\0';
+	}
+	return (destlen + srclen);
 }

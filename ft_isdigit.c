@@ -5,12 +5,10 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 12:32:33 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/04 11:29:29 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/14 18:34:18 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2019/11/14 18:34:18 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isdigit(int c)
 {

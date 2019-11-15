@@ -5,20 +5,24 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/30 13:43:03 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/04 11:32:14 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/14 19:21:58 by pde-bakk       #+#    #+#                */
+/*   Updated: 2019/11/15 12:56:11 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void		*ft_calloc(size_t count, size_t size)
 {
-	void *ret;
+	void *ptr;
 
-	ret = malloc(count * size);
-	if (ret == 0)
-		return (0);
-	ft_bzero(ret, count * size);
-	return (ret);
+	if (count == 0 || size == 0)
+	{
+		count = 1;
+		size = 1;
+	}
+	ptr = malloc(count * size);
+	if (ptr)
+		ft_bzero(ptr, count * size);
+	return (ptr);
 }

@@ -5,17 +5,14 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 13:04:07 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/04 11:34:44 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/14 19:21:01 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2019/11/14 19:21:02 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_isascii(int c)
 {
-	if ((c >= 0) && (c <= 127))
+	if (c >= 0 && c <= 127)
 		return (1);
-	else
-		return (0);
+	return (0);
 }

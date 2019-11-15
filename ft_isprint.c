@@ -5,16 +5,14 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 13:55:58 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/04 11:29:53 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/14 19:21:10 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2019/11/14 19:21:11 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_isprint(int c)
 {
-	if ((c >= 32) && (c <= 126))
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }

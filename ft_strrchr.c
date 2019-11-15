@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 15:51:28 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/14 12:15:50 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/15 12:14:39 by pde-bakk       #+#    #+#                */
+/*   Updated: 2019/11/15 12:45:37 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*str;
+	char	*result;
 	int		i;
-	int		count;
+	int		j;
 
-	str = 0;
+	result = 0;
 	i = 0;
-	count = ft_strlen(s);
-	while (count >= i)
+	j = ft_strlen(s);
+	while (i <= j)
 	{
-		if (s[i] == (char)c)
-			str = (char *)s + i;
+		if (s[i] == c)
+			result = (char *)s + i;
 		i++;
 	}
-	return (str);
+	return (result);
 }

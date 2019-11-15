@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/28 14:46:14 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/11 15:49:09 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/14 18:31:06 by pde-bakk       #+#    #+#                */
+/*   Updated: 2019/11/15 12:21:38 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	if (n != 0)
-		ft_memset(s, 0, n);
+	size_t			i;
+	unsigned char	*ptr;
+
+	ptr = s;
+	i = 0;
+	while (i < n)
+	{
+		ptr[i] = 0;
+		i++;
+	}
 }

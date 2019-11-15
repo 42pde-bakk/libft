@@ -5,36 +5,47 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/28 14:51:25 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/14 12:27:55 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/14 18:34:00 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2019/11/15 11:19:20 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+static int	iswhitespace(char c)
 {
-	int				n;
-	int				sign;
-	unsigned long	result;
+	if (c == ' ' || c == '\f' || c == '\n'
+		|| c == '\r' || c == '\t' || c == '\v')
+	{
+		return (1);
+	}
+	return (0);
+}
 
-	n = 0;
+int			ft_atoi(const char *str)
+{
+	int					sign;
+	unsigned long int	result;
+
 	result = 0;
 	sign = 1;
-	while (str[n] == ' ' || (str[n] >= 9 && str[n] <= 13))
-		n++;
-	if (str[n] == '-')
-		sign = sign * -1;
-	if (str[n] == '-' || str[n] == '+')
-		n++;
-	while ((str[n] >= '0') && (str[n] <= '9'))
+	while (iswhitespace(*str))
+		str++;
+	if (*str == '-')
 	{
-		if ((result > 9223372036854775807) && (sign == -1))
-			return (0);
-		if ((result >= 9223372036854775807) && (sign == 1))
-			return (-1);
-		result = result * 10 + str[n] - '0';
-		n++;
+		sign = -1;
+		str++;
 	}
+	else if (*str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9')
+	{
+		result = (10 * result) + (*str - '0');
+		str++;
+	}
+	if (result > 9223372036854775807 && sign == -1)
+		return (0);
+	else if (result >= 9223372036854775807)
+		return (-1);
 	return (sign * result);
 }

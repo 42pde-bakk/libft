@@ -5,16 +5,14 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 11:40:21 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/04 11:29:20 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/14 18:34:10 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2019/11/14 18:34:11 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_isalpha(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
 	return (0);
 }

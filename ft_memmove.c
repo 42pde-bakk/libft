@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/30 10:41:29 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/08 17:33:28 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/14 18:31:41 by pde-bakk       #+#    #+#                */
+/*   Updated: 2019/11/15 12:57:27 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,26 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
+	char		*d;
+	const char	*s;
+	size_t		i;
 
-	if (src == dst)
+	i = 0;
+	d = dst;
+	s = src;
+	if (dst == src)
 		return (dst);
-	if (src < dst)
-	{
-		i = len;
-		while (i > 0)
-		{
-			i--;
-			((char*)dst)[i] = ((char*)src)[i];
-		}
-	}
-	else
-	{
-		i = 0;
+	if (d < s)
 		while (i < len)
 		{
-			((char*)dst)[i] = ((char*)src)[i];
+			d[i] = s[i];
 			i++;
 		}
-	}
+	else
+		while (len)
+		{
+			*(d + (len - 1)) = *(s + (len - 1));
+			len--;
+		}
 	return (dst);
 }

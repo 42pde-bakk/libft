@@ -5,28 +5,29 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 17:36:13 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/14 12:46:08 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/14 18:33:47 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2019/11/15 12:20:30 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int		ft_strncmp(const char *s1, const char *s2, size_t len)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	first;
+	unsigned char	second;
 
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (((unsigned char)s1[i] == (unsigned char)s2[i]) && i < n)
+	while (i < len)
 	{
-		if ((s1[i] == '\0') || (s2[i] == '\0'))
-			return (((unsigned char)s1[i] - (unsigned char)s2[i]));
+		first = (unsigned char)s1[i];
+		second = (unsigned char)s2[i];
+		if (first != second)
+			return (first - second);
+		if (first == '\0' && second == '\0')
+			return (0);
 		i++;
 	}
-	if (i == n)
-		return (0);
-	else
-		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	return (0);
 }
