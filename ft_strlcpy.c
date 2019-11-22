@@ -6,13 +6,13 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/14 18:32:23 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/15 12:57:45 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2019/11/15 17:10:44 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t			ft_strlcpy(char *dst, const char *src, size_t dsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 {
 	size_t srclen;
 

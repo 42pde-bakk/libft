@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/04 15:11:23 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/14 09:34:38 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/04 15:11:23 by pde-bakk       #+#    #+#                */
+/*   Updated: 2019/11/15 17:17:55 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,9 @@ static int	amount(int n)
 
 static int	edgecasecheck(int n, char *str)
 {
-	int		ii;
-	char	*fstr;
-
 	if (n == -2147483648)
 	{
-		ii = 0;
-		fstr = "-2147483648";
-		while (ii < 11)
-		{
-			str[ii] = fstr[ii];
-			ii++;
-		}
-		str[11] = '\0';
+		ft_strlcpy(str, "-2147483648", 12);
 		return (1);
 	}
 	else if (n == 0)

@@ -6,13 +6,13 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/14 19:21:58 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/15 12:56:11 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2019/11/15 17:12:43 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	void *ptr;
 

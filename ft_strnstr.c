@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_strnstr.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: sde-kok <sde-kok@student.codam.nl>           +#+                     */
+/*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/30 09:52:56 by sde-kok        #+#    #+#                */
-/*   Updated: 2019/11/15 15:40:06 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/15 17:49:30 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2019/11/15 17:49:37 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

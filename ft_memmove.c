@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/14 18:31:41 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/15 12:57:27 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2019/11/15 17:14:06 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	else
 		while (len)
 		{
-			*(d + (len - 1)) = *(s + (len - 1));
+			d[len - 1] = s[len - 1];
 			len--;
 		}
 	return (dst);
