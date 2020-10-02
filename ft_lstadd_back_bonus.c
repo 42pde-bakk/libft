@@ -5,14 +5,14 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/06 12:30:13 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/14 11:16:43 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/06 12:30:13 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2020/10/02 23:00:28 by peerdb        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **alst, t_list *new)
+void	ft_lstadd_back(t_list **alst, t_list *newitem)
 {
 	t_list *tmp;
 
@@ -23,8 +23,8 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 	{
 		while (tmp->next)
 			tmp = tmp->next;
-		tmp->next = new;
+		tmp->next = newitem;
 	}
 	else
-		ft_lstadd_front(alst, new);
+		ft_lstadd_front(alst, newitem);
 }
