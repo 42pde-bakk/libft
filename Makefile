@@ -5,8 +5,8 @@
 #                                                      +:+                     #
 #    By: pde-bakk <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
-#    Created: 2019/10/31 13:45:00 by pde-bakk       #+#    #+#                 #
-#    Updated: 2019/11/15 17:25:52 by pde-bakk      ########   odam.nl          #
+#    Created: 2019/10/31 13:45:00 by pde-bakk      #+#    #+#                  #
+#    Updated: 2020/10/02 17:20:46 by peerdb        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ $(NAME):
 	ar -rc $(NAME) $(OBJ)
 
 clean:
-	/bin/rm -f *.o *~
+	/bin/rm -f *.o *~ *.gch
 
 fclean: clean
 	/bin/rm -f $(NAME)

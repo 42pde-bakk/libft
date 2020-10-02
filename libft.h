@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 11:26:01 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/12 17:00:59 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/10/02 17:20:39 by peerdb        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ char				*ft_strrchr(const char *s, int c);
 char				*ft_strnstr(const char *haystack,
 					const char *needle, size_t len);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
+int					iswhitespace(char c);
 int					ft_atoi(const char *str);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
