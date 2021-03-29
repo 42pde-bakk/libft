@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/31 17:02:56 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/11 19:56:12 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2021/03/29 11:37:11 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	setcheck(char const *set, char a)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (set[i])
@@ -29,7 +29,7 @@ static int	setcheck(char const *set, char a)
 static int	lengthchecker(char const *s1, char const *set)
 {
 	int	i;
-	int end;
+	int	end;
 
 	i = 0;
 	while (s1[i] != '\0')
@@ -41,7 +41,7 @@ static int	lengthchecker(char const *s1, char const *set)
 	return (end + 1);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		start;
@@ -57,7 +57,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	len = lengthchecker(s1, set) - start;
 	if (len <= 0)
 		len = 0;
-	trim = (char*)malloc(sizeof(char) * (len) + 1);
+	trim = (char *)malloc(sizeof(char) * (len) + 1);
 	if (trim == NULL)
 		return (NULL);
 	i = 0;

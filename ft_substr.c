@@ -5,14 +5,14 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/14 19:23:33 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/15 17:08:45 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/14 19:23:33 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2021/03/29 11:37:24 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t				i;
 	char				*dst;
@@ -26,7 +26,7 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (tmp < len)
 		len = (size_t)tmp;
-	dst = (char*)malloc(len + 1);
+	dst = (char *)malloc(len + 1);
 	if (!(dst))
 		return (NULL);
 	while (i < len && s[start])

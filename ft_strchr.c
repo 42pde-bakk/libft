@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/14 18:32:41 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/15 12:38:06 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/14 18:32:41 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2021/03/29 11:34:49 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	len = ft_strlen(s) + 1;
 	i = 0;

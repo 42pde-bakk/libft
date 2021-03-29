@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/31 15:52:20 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/14 09:47:45 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2021/03/29 11:35:11 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	n = 0;
 	if (s1 == 0 || s2 == 0)
 		return (0);
-	join = (char*)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	join = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (join == NULL)
 		return (NULL);
 	while (s1[i])

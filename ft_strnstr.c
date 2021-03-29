@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/15 17:49:30 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/15 17:49:37 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2021/03/29 11:36:39 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	{
 		if (haystack[i] == needle[0])
 			if (ft_strncmp(haystack + i, needle, nsize) == 0)
-				return (char *)(haystack + i);
+				return ((char *)(haystack + i));
 		i++;
 	}
 	return (0);

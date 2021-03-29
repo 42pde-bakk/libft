@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/04 15:11:23 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/15 17:17:55 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/04 15:11:23 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2021/03/29 11:27:47 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	amount(int n)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	if (n < 0)
@@ -43,7 +43,7 @@ static int	edgecasecheck(int n, char *str)
 	return (0);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*ret;
 	int		i;
@@ -53,7 +53,7 @@ char		*ft_itoa(int n)
 	nb = n;
 	if (n < 0)
 		nb = -n;
-	ret = (char*)malloc(i + 1);
+	ret = (char *)malloc(i + 1);
 	if (ret == NULL)
 		return (NULL);
 	if (edgecasecheck(n, ret) == 1)

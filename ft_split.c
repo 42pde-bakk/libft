@@ -5,14 +5,14 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/03 15:55:21 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/15 18:45:26 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/03 15:55:21 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2021/03/29 11:34:36 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_countwords(const char *s, char c)
+static int	ft_countwords(const char *s, char c)
 {
 	int	i;
 	int	count;
@@ -35,7 +35,7 @@ static int		ft_countwords(const char *s, char c)
 	return (count);
 }
 
-static int		ft_wordlength(const char *s, char c)
+static int	ft_wordlength(const char *s, char c)
 {
 	int	i;
 
@@ -45,9 +45,9 @@ static int		ft_wordlength(const char *s, char c)
 	return (i);
 }
 
-static void		*ft_free_array(char **arr)
+static void	*ft_free_array(char **arr)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (arr[i])
@@ -59,7 +59,7 @@ static void		*ft_free_array(char **arr)
 	return (NULL);
 }
 
-static char		*ft_mallocword(const char *s, char c)
+static char	*ft_mallocword(const char *s, char c)
 {
 	int		i;
 	char	*word;
@@ -84,7 +84,7 @@ static char		*ft_mallocword(const char *s, char c)
 	return (word);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		n;
@@ -94,7 +94,7 @@ char			**ft_split(char const *s, char c)
 		return (0);
 	i = 0;
 	n = 0;
-	arr = (char **)ft_calloc(sizeof(char*), (ft_countwords(s, c) + 1));
+	arr = (char **)ft_calloc(sizeof(char *), (ft_countwords(s, c) + 1));
 	if (arr == NULL || s == 0)
 		return (NULL);
 	while (s[i] && ft_countwords(s, c) > n)
@@ -111,16 +111,4 @@ char			**ft_split(char const *s, char c)
 			i++;
 	}
 	return (arr);
-}
-
-#include <stdio.h>
-
-int	main(void)
-{
-	int	i;
-
-	i = 0;
-	ft_split("hallo", 'l');
-	while (1)
-		i++;
 }

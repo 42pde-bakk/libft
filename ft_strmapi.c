@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 17:03:38 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/04 17:26:15 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2021/03/29 11:36:04 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (s[i])
 		i++;
-	fstr = (char*)malloc(i + 1);
+	fstr = (char *)malloc(i + 1);
 	if (fstr == 0)
 		return (NULL);
 	i = 0;

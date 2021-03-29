@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/14 18:32:14 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/15 12:43:55 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/14 18:32:14 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2021/03/29 11:35:57 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])

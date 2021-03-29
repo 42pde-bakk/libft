@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/14 18:32:23 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/15 17:10:44 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/14 18:32:23 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2021/03/29 11:35:41 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 {
-	size_t srclen;
+	size_t	srclen;
 
 	if (!dst || !src)
 		return (0);

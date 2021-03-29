@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/06 12:30:13 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/10/02 23:00:28 by peerdb        ########   odam.nl         */
+/*   Updated: 2021/03/29 11:28:02 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **alst, t_list *newitem)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (alst == NULL)
 		return ;

@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/14 18:32:33 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/15 11:21:39 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/14 18:32:33 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2021/03/29 11:35:27 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static	size_t	ft_strnlen(char *str, size_t max)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
@@ -25,7 +25,7 @@ static	size_t	ft_strnlen(char *str, size_t max)
 		return (max);
 }
 
-size_t			ft_strlcat(char *dst, const char *src, size_t dsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dsize)
 {
 	size_t	srclen;
 	size_t	destlen;

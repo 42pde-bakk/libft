@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/05 17:13:56 by pde-bakk       #+#    #+#                */
-/*   Updated: 2019/11/14 11:10:10 by pde-bakk      ########   odam.nl         */
+/*   Created: 2019/11/05 17:13:56 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2021/03/29 11:28:45 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*list;
 
-	list = (t_list*)malloc(sizeof(t_list));
+	list = (t_list *)malloc(sizeof(t_list));
 	if (list == NULL)
 		return (NULL);
 	list->content = content;
