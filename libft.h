@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 11:26:01 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2021/03/29 15:44:36 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2021/03/29 16:57:06 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void				ft_putchar_fd(char c, int fd);
-void				ft_putstr_fd(char *s, int fd);
-void				ft_putendl_fd(char *s, int fd);
+void				ft_putchar_fd(const char c, int fd);
+void				ft_putstr_fd(const char *s, int fd);
+void				ft_putendl_fd(const char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **alst, t_list *newitem);
