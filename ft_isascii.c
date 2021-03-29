@@ -6,13 +6,11 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/14 19:21:01 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/14 19:21:02 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2021/03/29 15:45:17 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	return (c >= 0 && c <= 127);
 }

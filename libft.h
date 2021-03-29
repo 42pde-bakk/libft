@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 11:26:01 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2021/03/29 11:25:01 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2021/03/29 15:44:36 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_list
 	struct s_list	*next;
 }t_list;
 
+int					iswhitespace(char c);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);

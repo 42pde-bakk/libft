@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/14 18:34:00 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/10/02 17:20:15 by peerdb        ########   odam.nl         */
+/*   Updated: 2021/03/29 15:44:13 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,8 @@
 
 int	iswhitespace(char c)
 {
-	if (c == ' ' || c == '\f' || c == '\n'
-		|| c == '\r' || c == '\t' || c == '\v')
-	{
-		return (1);
-	}
-	return (0);
+	return (c == ' ' || c == '\f' || c == '\n'
+		|| c == '\r' || c == '\t' || c == '\v');
 }
 
 int	ft_atoi(const char *str)

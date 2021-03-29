@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 17:42:13 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/08 21:01:42 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2021/03/29 15:47:42 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	int	ret;
+
 	if (s)
-		write(fd, s, ft_strlen(s));
+		ret = write(fd, s, ft_strlen(s));
+	(void)ret;
 }

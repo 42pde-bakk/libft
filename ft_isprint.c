@@ -6,13 +6,11 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/14 19:21:10 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2019/11/14 19:21:11 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2021/03/29 15:45:29 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	return (c >= 32 && c <= 126);
 }

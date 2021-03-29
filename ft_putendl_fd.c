@@ -6,7 +6,7 @@
 /*   By: pde-bakk <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 17:47:03 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2021/03/29 11:33:21 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2021/03/29 15:47:19 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int	i;
+	int	ret;
 
-	i = 0;
 	if (s)
-		write(fd, s, ft_strlen(s));
-	write(fd, "\n", 1);
+		ret = write(fd, s, ft_strlen(s));
+	ret = write(fd, "\n", 1);
+	(void)ret;
 }
