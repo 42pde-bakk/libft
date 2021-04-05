@@ -6,7 +6,7 @@
 #    By: pde-bakk <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/31 13:45:00 by pde-bakk      #+#    #+#                  #
-#    Updated: 2021/04/05 16:02:36 by pde-bakk      ########   odam.nl          #
+#    Updated: 2021/04/05 16:06:30 by pde-bakk      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@printf "$(YELLOW)Linking libft.a...$(RESET)\n"
-	ar -rc $(NAME) $(OBJ)
+	@ar -rc $(NAME) $(OBJ)
 	@printf "$(YELLOW)Done!$(RESET)\n"
 
 %.o: %.c
