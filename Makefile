@@ -6,7 +6,7 @@
 #    By: pde-bakk <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/31 13:45:00 by pde-bakk      #+#    #+#                  #
-#    Updated: 2021/04/05 15:45:29 by pde-bakk      ########   odam.nl          #
+#    Updated: 2021/04/05 16:02:36 by pde-bakk      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,10 +38,21 @@ else
   FLAGS += -Ofast
 endif
 
+# COLORS
+PINK = \x1b[35;01m
+BLUE = \x1b[34;01m
+YELLOW = \x1b[33;01m
+GREEN = \x1b[32;01m
+RED = \x1b[31;01m
+WHITE = \x1b[31;37m
+RESET = \x1b[0m
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	@printf "$(YELLOW)Linking libft.a...$(RESET)\n"
 	ar -rc $(NAME) $(OBJ)
+	@printf "$(YELLOW)Done!$(RESET)\n"
 
 %.o: %.c
 	@$(CC) -c $^ -o $@ $(FLAGS) $(HEADER)
