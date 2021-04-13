@@ -32,6 +32,7 @@ static int	lengthchecker(char const *s1, char const *set)
 	int	end;
 
 	i = 0;
+	end = 0;
 	while (s1[i] != '\0')
 	{
 		if (setcheck(set, s1[i]) == 0)
