@@ -39,6 +39,7 @@ else
 endif
 
 # COLORS
+SHELL := /bin/bash
 PINK = \x1b[35;01m
 BLUE = \x1b[34;01m
 YELLOW = \x1b[33;01m
