@@ -59,7 +59,7 @@ $(NAME): $(OBJ)
 	@$(CC) -c $^ -o $@ $(FLAGS) $(HEADER)
 
 clean:
-	@/bin/rm -f *.o *~ *.gch
+	@/bin/rm -f *.o *~ *.gch $(OBJ)
 
 fclean: clean
 	@/bin/rm -f $(NAME)
