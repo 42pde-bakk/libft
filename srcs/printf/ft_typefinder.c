@@ -37,7 +37,11 @@ int	ft_typefinder4(const char *s, t_map *map, va_list *args)
 	if (s[map->pos] == 'p')
 	{
 		ptr = va_arg(*args, void *);
+#ifdef __i386__
+		string = ft_ultoa((unsigned long)ptr, 16, map, s[map->pos]);
+#else
 		string = ft_ultoa((unsigned long long)ptr, 16, map, s[map->pos]);
+#endif
 		string = ft_nbrputter_flags(string, map);
 		free(string);
 		map->pos++;

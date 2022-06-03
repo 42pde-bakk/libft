@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
 int	iswhitespace(char c)
 {
@@ -22,26 +23,30 @@ int	ft_atoi(const char *str)
 {
 	int					sign;
 	unsigned long int	result;
+	int					i;
+
 
 	result = 0;
 	sign = 1;
-	while (iswhitespace(*str))
-		str++;
-	if (*str == '-')
+	i = 0;
+	while (iswhitespace(str[i]))
+		i++;
+	if (str[i] == '-')
 	{
 		sign = -1;
-		str++;
+		i++;
 	}
-	else if (*str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
+	else if (str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result = (10 * result) + (*str - '0');
-		str++;
+		result *= 10;
+		result += str[i] - '0';
+		i++;
 	}
-	if (result > 9223372036854775807 && sign == -1)
+	if (result > LONG_MAX && sign == -1)
 		return (0);
-	else if (result >= 9223372036854775807)
+	else if (result >= LONG_MAX)
 		return (-1);
-	return (sign * result);
+	return ((int)(sign * result));
 }
