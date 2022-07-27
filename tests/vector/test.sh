@@ -8,13 +8,11 @@ fi
 
 function test() {
   SRC_FILES="$1"
-  cc -Wall -Werror -Wextra -I include libft.a "$SRC_FILES" -o libc_vector_test.out
-  if [[ $? -ne 0 ]]; then
+  if ! cc -Wall -Werror -Wextra -I include libft.a "$SRC_FILES" -o libc_vector_test.out; then
     echo "Failed on test $SRC_FILES"
     exit 1
   fi
-  ./libc_vector_test.out > /dev/null 2>&1
-  if [[ $? -ne 0 ]]; then
+  if ! ./libc_vector_test.out > /dev/null 2>&1; then
     echo "[KO] on test $SRC_FILES"
     exit 1
   fi
