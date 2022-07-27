@@ -40,7 +40,8 @@ RED = \x1b[31;01m
 WHITE = \x1b[31;37m
 RESET = \x1b[0m
 
-all: $(NAME)
+all:
+	$(MAKE) $(NAME) -j
 
 $(NAME): directories $(OBJECTS)
 	@printf "$(YELLOW)Linking libft.a...$(RESET)\n"
@@ -60,6 +61,8 @@ clean:
 fclean: clean
 	/bin/rm -f $(NAME)
 
-re: fclean all
+re:
+	$(MAKE) fclean
+	$(MAKE) all -j
 
 bonus: re

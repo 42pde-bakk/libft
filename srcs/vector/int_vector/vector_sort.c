@@ -13,7 +13,7 @@
 #include "vector.h"
 #include <stdio.h>
 
-static size_t	find_desired_position(t_vector *vec, const CONTENT nb)
+static size_t	find_desired_position(t_intvector *vec, const CONTENT nb)
 {
 	size_t	i;
 
@@ -25,7 +25,7 @@ static size_t	find_desired_position(t_vector *vec, const CONTENT nb)
 	return (i);
 }
 
-static void	reinsert(t_vector *vec, size_t index)
+static void	reinsert(t_intvector *vec, size_t index)
 {
 	const CONTENT	value = vec->arr[index];
 	size_t			desired_pos;
@@ -39,7 +39,7 @@ static void	reinsert(t_vector *vec, size_t index)
 	vec->arr[desired_pos] = (CONTENT)value;
 }
 
-void	vector_sort(t_vector *vec)
+void	intvector_sort(t_intvector *vec)
 {
 	size_t	i;
 

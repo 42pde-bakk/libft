@@ -13,12 +13,15 @@
 #include "vector.h"
 #include <stdlib.h>
 
-static void	vector_realloc(t_vector *vec, size_t newsize)
+static int	vector_realloc(t_intvector *vec, size_t newsize)
 {
 	size_t	i;
 	CONTENT	*new_arr;
 
-	new_arr = calloc_wrapper(newsize + 1, sizeof(CONTENT));
+	new_arr = calloc(newsize + 1, sizeof(CONTENT));
+	if (!new_arr) {
+		return (EXIT_FAILURE);
+	}
 	i = 0;
 	while (i < vec->size)
 	{
@@ -28,31 +31,42 @@ static void	vector_realloc(t_vector *vec, size_t newsize)
 	free(vec->arr);
 	vec->arr = new_arr;
 	vec->capacity = newsize;
+	return (EXIT_SUCCESS);
 }
 
-t_vector	*vector_init(size_t init_size)
+t_intvector	*intvector_init(size_t init_size)
 {
-	t_vector	*vec;
+	t_intvector	*vec;
 
 	if (init_size == 0)
 		init_size = 1;
-	vec = calloc_wrapper(1, sizeof(t_vector));
+	vec = calloc(1, sizeof(t_intvector));
+	if (!vec) {
+		return (NULL);
+	}
 	vec->capacity = init_size;
-	vec->arr = calloc_wrapper(init_size + 1, sizeof(CONTENT));
+	vec->arr = calloc(init_size + 1, sizeof(CONTENT));
+	if (!vec->arr) {
+		intvector_destroy(vec);
+		return (NULL);
+	}
 	return (vec);
 }
 
-void	vector_pushback(t_vector *vec, CONTENT item)
+int intvector_pushback(t_intvector *vec, CONTENT item)
 {
 	if (vec->size == vec->capacity)
 	{
-		vector_realloc(vec, vec->capacity * 2);
+		if (vector_realloc(vec, vec->capacity * 2)) {
+			return (EXIT_FAILURE);
+		}
 	}
 	vec->arr[vec->size] = item;
 	++vec->size;
+	return (EXIT_SUCCESS);
 }
 
-ssize_t	vector_find_by_value(t_vector *vec, CONTENT to_find)
+ssize_t	intvector_find_by_value(t_intvector *vec, CONTENT to_find)
 {
 	size_t	i;
 

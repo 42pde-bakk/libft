@@ -12,14 +12,14 @@
 
 #include "vector.h"
 
-void	vector_destroy(t_vector *vec)
+void	intvector_destroy(t_intvector *vec)
 {
 	free(vec->arr);
 	vec->arr = NULL;
 	free(vec);
 }
 
-void	vector_delete_bypos(t_vector *vec, size_t pos)
+void	intvector_delete_bypos(t_intvector *vec, size_t pos)
 {
 	if (pos >= vec->size)
 		return ;
@@ -34,7 +34,7 @@ void	vector_delete_bypos(t_vector *vec, size_t pos)
 // finds the first occurence of item and deletes it
 // right now only works for ints and chars, not strings
 
-void	vector_delete_byval(t_vector *vec, CONTENT item)
+void	intvector_delete_byval(t_intvector *vec, CONTENT item)
 {
 	size_t	pos;
 
@@ -43,7 +43,7 @@ void	vector_delete_byval(t_vector *vec, CONTENT item)
 	{
 		if (vec->arr[pos] == item)
 		{
-			vector_delete_bypos(vec, pos);
+			intvector_delete_bypos(vec, pos);
 			return ;
 		}
 		++pos;
