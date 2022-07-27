@@ -16,11 +16,9 @@
 # include <sys/types.h>
 # include <stdbool.h>
 
-
 # ifndef CONTENT
 #  define CONTENT int
 # endif
-
 
 typedef struct s_intvector
 {
