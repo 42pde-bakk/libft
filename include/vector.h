@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <sys/types.h>
 # include <stdbool.h>
+# include <stdint.h>
 
 # ifndef CONTENT
 #  define CONTENT int
@@ -49,14 +50,31 @@ typedef struct s_ptrvector
 }	t_ptrvector;
 
 t_ptrvector* ptrvector_init(size_t init_size, bool malloced);
-void ptrvector_destroy(t_ptrvector *vec);
+void	ptrvector_destroy(t_ptrvector *vec);
 
-int 		ptrvector_pushback(t_ptrvector *vec, void *item);
-void ptrvector_delete_bypos(t_ptrvector *vec, size_t pos);
-void ptrvector_delete_byval(t_ptrvector *vec, void *item);
+int		ptrvector_pushback(t_ptrvector *vec, void *item);
+void	ptrvector_delete_bypos(t_ptrvector *vec, size_t pos);
+void	ptrvector_delete_byval(t_ptrvector *vec, void *item);
 
-ssize_t		ptrvector_find_by_value(t_ptrvector *vec, void *to_find);
-void			ptrvector_sort(t_ptrvector *vec);
+ssize_t	ptrvector_find_by_value(t_ptrvector *vec, void *to_find);
+void	ptrvector_sort(t_ptrvector *vec);
+
+typedef struct s_uint64vector
+{
+	uint64_t	*arr;
+	size_t	size;
+	size_t	capacity;
+}	t_uint64vector;
+
+t_uint64vector *uint64vector_init(size_t init_size);
+void	uint64vector_destroy(t_uint64vector *vec);
+
+int		uint64vector_pushback(t_uint64vector *vec, uint64_t item);
+void	uint64vector_delete_bypos(t_uint64vector *vec, size_t pos);
+void	uint64vector_delete_byval(t_uint64vector *vec, uint64_t item);
+
+ssize_t	uint64vector_find_by_value(t_uint64vector *vec, uint64_t to_find);
+void	uint64vector_sort(t_uint64vector *vec);
 
 //VECTOR_H
 #endif
