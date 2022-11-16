@@ -10,12 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-void	ft_putchar_fd(const char c, int fd)
+ssize_t	ft_putchar_fd(char c, int fd)
 {
-	int	ret;
-
-	ret = write(fd, &c, 1);
-	(void)ret;
+	return (write(fd, &c, 1));
 }

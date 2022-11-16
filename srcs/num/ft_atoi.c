@@ -13,18 +13,11 @@
 #include "libft.h"
 #include <limits.h>
 
-int	iswhitespace(char c)
-{
-	return (c == ' ' || c == '\f' || c == '\n'
-		|| c == '\r' || c == '\t' || c == '\v');
-}
-
 int	ft_atoi(const char *str)
 {
 	int					sign;
 	unsigned long int	result;
 	int					i;
-
 
 	result = 0;
 	sign = 1;

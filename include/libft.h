@@ -13,8 +13,10 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>
-# include <unistd.h>
+# include <stddef.h>
+# include <sys/types.h>
+
+# define WHITESPACE_SET " \f\n\r\t\v"
 
 typedef struct s_list
 {
@@ -38,7 +40,6 @@ char				*ft_strrchr(const char *s, int c);
 char				*ft_strnstr(const char *haystack,
 						const char *needle, size_t len);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
-int					iswhitespace(char c);
 int					ft_atoi(const char *str);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
@@ -55,9 +56,9 @@ char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void				ft_putchar_fd(const char c, int fd);
-void				ft_putstr_fd(const char *s, int fd);
-void				ft_putendl_fd(const char *s, int fd);
+ssize_t				ft_putchar_fd(char c, int fd);
+ssize_t				ft_putstr_fd(const char *s, int fd);
+ssize_t				ft_putendl_fd(const char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **alst, t_list *newitem);
