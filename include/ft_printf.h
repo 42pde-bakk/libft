@@ -13,6 +13,10 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+#define STDIN_FILENO 0
+#define STDOUT_FILENO 1
+#define STDERR_FILENO 2
+
 int				ft_printf(const char *s, ...);
 int				ft_dprintf(int fd, const char *s, ...);
 
