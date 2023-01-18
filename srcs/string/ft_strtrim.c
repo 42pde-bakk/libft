@@ -10,16 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
 
-static int	setcheck(char const *set, char a)
-{
-	int	i;
+static int	setcheck(char const *set, char a) {
+	int	i = 0;
 
-	i = 0;
-	while (set[i])
-	{
+	while (set[i]) {
 		if (set[i] == a)
 			return (1);
 		i++;
@@ -27,15 +23,11 @@ static int	setcheck(char const *set, char a)
 	return (0);
 }
 
-static int	lengthchecker(char const *s1, char const *set)
-{
-	int	i;
-	int	end;
+static int	lengthchecker(char const *s1, char const *set) {
+	int	i = 0;
+	int	end = 0;
 
-	i = 0;
-	end = 0;
-	while (s1[i] != '\0')
-	{
+	while (s1[i] != '\0') {
 		if (setcheck(set, s1[i]) == 0)
 			end = i;
 		i++;
@@ -43,28 +35,25 @@ static int	lengthchecker(char const *s1, char const *set)
 	return (end + 1);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	int		i;
+char	*ft_strtrim(char const *s1, char const *set) {
 	int		start;
 	int		len;
 	char	*trim;
+	int		i = 0;
 
-	i = 0;
 	if (s1 == 0 || set == 0)
-		return (0);
+		return (NULL);
 	while ((s1[i]) && (setcheck(set, s1[i]) == 1))
 		i++;
 	start = i;
 	len = lengthchecker(s1, set) - start;
 	if (len <= 0)
 		len = 0;
-	trim = (char *)malloc(sizeof(char) * (len) + 1);
+	trim = malloc(sizeof(char) * (len) + 1);
 	if (trim == NULL)
 		return (NULL);
 	i = 0;
-	while (i < len)
-	{
+	while (i < len) {
 		trim[i] = s1[start + i];
 		i++;
 	}

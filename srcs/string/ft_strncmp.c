@@ -10,17 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t len)
-{
+int	ft_strncmp(const char *s1, const char *s2, size_t len) {
 	size_t			i;
 	unsigned char	first;
 	unsigned char	second;
 
 	i = 0;
-	while (i < len)
-	{
+	while (i < len) {
 		first = (unsigned char)s1[i];
 		second = (unsigned char)s2[i];
 		if (first != second)

@@ -13,8 +13,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static int	ft_countwords(const char *s, char c)
-{
+static int	ft_countwords(const char *s, char c) {
 	int	i;
 	int	count;
 
@@ -36,23 +35,19 @@ static int	ft_countwords(const char *s, char c)
 	return (count);
 }
 
-static int	ft_wordlength(const char *s, char c)
-{
-	int	i;
+static int	ft_wordlength(const char *s, char c) {
+	int	i = 0;
 
-	i = 0;
-	while ((s[i]) && (s[i] != c))
+	while ((s[i]) && (s[i] != c)) {
 		i++;
+	}
 	return (i);
 }
 
-static void	*ft_free_array(char **arr)
-{
-	unsigned int	i;
+static void	*ft_free_array(char **arr) {
+	unsigned int	i = 0;
 
-	i = 0;
-	while (arr[i])
-	{
+	while (arr[i]) {
 		free(arr[i]);
 		i++;
 	}
@@ -60,23 +55,20 @@ static void	*ft_free_array(char **arr)
 	return (NULL);
 }
 
-static char	*ft_mallocword(const char *s, char c)
-{
-	int		i;
+static char	*ft_mallocword(const char *s, char c) {
 	char	*word;
+	int		i = 0;
 	int		length;
 
-	i = 0;
-	length = 0;
-	while ((s[i]) && (s[i] != c))
+	while ((s[i]) && (s[i] != c)) {
 		i++;
+	}
 	length = i;
 	i = 0;
 	word = (char *)malloc(sizeof(char) * (length + 1));
 	if (word == NULL)
 		return (NULL);
-	while ((s[i]) && length > 0)
-	{
+	while ((s[i]) && length > 0) {
 		word[i] = s[i];
 		i++;
 		length--;
@@ -85,8 +77,7 @@ static char	*ft_mallocword(const char *s, char c)
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
-{
+char	**ft_split(char const *s, char c) {
 	int		i;
 	int		n;
 	char	**arr;
@@ -96,20 +87,19 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	n = 0;
 	arr = (char **)ft_calloc(sizeof(char *), (ft_countwords(s, c) + 1));
-	if (arr == NULL || s == 0)
+	if (arr == NULL)
 		return (NULL);
-	while (s[i] && ft_countwords(s, c) > n)
-	{
-		if ((s[i] != c) && (ft_countwords(s, c) > n))
-		{
+	while (s[i] && ft_countwords(s, c) > n) {
+		if ((s[i] != c) && (ft_countwords(s, c) > n)) {
 			arr[n] = ft_mallocword(s + i, c);
 			if (arr[n] == NULL)
 				return (ft_free_array(arr));
 			i = i + ft_wordlength(s + i, c);
 			n++;
 		}
-		while (s[i] == c)
+		while (s[i] == c) {
 			i++;
+		}
 	}
 	return (arr);
 }
