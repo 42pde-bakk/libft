@@ -49,6 +49,8 @@ typedef struct s_ptrvector
 	size_t	capacity;
 }	t_ptrvector;
 
+typedef int (*t_ptrvector_sort_function)(const void*, const void*);
+
 t_ptrvector* ptrvector_init(size_t init_size, bool malloced);
 void	ptrvector_destroy(t_ptrvector *vec);
 
@@ -57,7 +59,7 @@ void	ptrvector_delete_bypos(t_ptrvector *vec, size_t pos);
 void	ptrvector_delete_byval(t_ptrvector *vec, void *item);
 
 ssize_t	ptrvector_find_by_value(t_ptrvector *vec, void *to_find);
-void	ptrvector_sort(t_ptrvector *vec);
+void	ptrvector_sort(t_ptrvector *vec, t_ptrvector_sort_function sort_function);
 
 typedef struct s_uint64vector
 {
