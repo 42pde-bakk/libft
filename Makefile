@@ -27,7 +27,7 @@ FLAGS := -Wall -Werror -Wextra
 ifdef DEBUG
   FLAGS += -g -fsanitize=address
 else
-  FLAGS += -Ofast
+#  FLAGS += -Ofast
 endif
 
 # COLORS
