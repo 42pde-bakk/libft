@@ -38,9 +38,6 @@ void		intvector_delete_byval(t_intvector *vec, CONTENT item);
 ssize_t		intvector_find_by_value(t_intvector *vec, CONTENT to_find);
 void		intvector_sort(t_intvector *vec);
 
-//void		fatal_error(const char *s);
-//void	*calloc_wrapper(size_t nmemb, size_t size);
-
 typedef struct s_ptrvector
 {
 	void	**arr;

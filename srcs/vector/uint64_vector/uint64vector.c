@@ -3,14 +3,14 @@
 //
 
 #include "vector.h"
-#include <stdlib.h>
+#include "libft.h"
 
 static int uint64vector_realloc(t_uint64vector *vec, size_t newsize)
 {
 	size_t		i = 0;
 	uint64_t*	new_arr;
 
-	new_arr = calloc(newsize + 1, sizeof(uint64_t));
+	new_arr = ft_calloc(newsize + 1, sizeof(uint64_t));
 	if (!new_arr) {
 		return (EXIT_FAILURE);
 	}
@@ -31,12 +31,12 @@ t_uint64vector *uint64vector_init(size_t init_size)
 
 	if (init_size == 0)
 		init_size = 1;
-	vec = calloc(1, sizeof(t_uint64vector));
+	vec = ft_calloc(1, sizeof(t_uint64vector));
 	if (!vec) {
 		return (NULL);
 	}
 	vec->capacity = init_size;
-	vec->arr = calloc(init_size + 1, sizeof(uint64_t));
+	vec->arr = ft_calloc(init_size + 1, sizeof(uint64_t));
 	if (!vec->arr) {
 		uint64vector_destroy(vec);
 		return (NULL);

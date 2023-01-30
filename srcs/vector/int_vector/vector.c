@@ -11,14 +11,14 @@
 /* ************************************************************************** */
 
 #include "vector.h"
-#include <stdlib.h>
+#include "libft.h"
 
 static int	vector_realloc(t_intvector *vec, size_t newsize)
 {
 	size_t	i;
 	CONTENT	*new_arr;
 
-	new_arr = calloc(newsize + 1, sizeof(CONTENT));
+	new_arr = ft_calloc(newsize + 1, sizeof(CONTENT));
 	if (!new_arr) {
 		return (EXIT_FAILURE);
 	}
@@ -40,12 +40,12 @@ t_intvector	*intvector_init(size_t init_size)
 
 	if (init_size == 0)
 		init_size = 1;
-	vec = calloc(1, sizeof(t_intvector));
+	vec = ft_calloc(1, sizeof(t_intvector));
 	if (!vec) {
 		return (NULL);
 	}
 	vec->capacity = init_size;
-	vec->arr = calloc(init_size + 1, sizeof(CONTENT));
+	vec->arr = ft_calloc(init_size + 1, sizeof(CONTENT));
 	if (!vec->arr) {
 		intvector_destroy(vec);
 		return (NULL);

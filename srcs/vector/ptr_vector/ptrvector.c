@@ -3,14 +3,14 @@
 //
 
 #include "vector.h"
-#include <stdlib.h>
+#include "libft.h"
 
 static int ptrvector_realloc(t_ptrvector *vec, size_t newsize)
 {
 	size_t	i;
 	void	**new_arr;
 
-	new_arr = calloc(newsize + 1, sizeof(void *));
+	new_arr = ft_calloc(newsize + 1, sizeof(void *));
 	if (!new_arr) {
 		return (EXIT_FAILURE);
 	}
@@ -32,13 +32,13 @@ t_ptrvector* ptrvector_init(size_t init_size, bool malloced)
 
 	if (init_size == 0)
 		init_size = 1;
-	vec = calloc(1, sizeof(t_ptrvector));
+	vec = ft_calloc(1, sizeof(t_ptrvector));
 	if (!vec) {
 		return (NULL);
 	}
 	vec->capacity = init_size;
 	vec->malloced = malloced;
-	vec->arr = calloc(init_size + 1, sizeof(void *));
+	vec->arr = ft_calloc(init_size + 1, sizeof(void *));
 	if (!vec->arr) {
 		ptrvector_destroy(vec);
 		return (NULL);
